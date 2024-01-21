@@ -8,10 +8,10 @@ const router = require('./Routes/authRoutes');
 app.use(bodyParser.json());
 
 db();
-app.get('/',(req,res) =>{
+app.get('/', (req, res) => {
     res.send('hello from server');
 })
-app.use('/v1',router);
-app.listen(process.env.PORT,() =>{
-    console.log('todo server running on '+ process.env.PORT);
+app.use('/v1', router);
+app.listen(process.env.PORT, () => {
+    console.log('todo server running on ' + process.env.PORT);
 });
