@@ -19,6 +19,11 @@ const schema = mongoose.Schema({
         ref: 'User',
         required: true,
     },
+    priority: {
+        type: String, 
+        enum: ['lowest', 'low', 'medium', 'heigh', 'heighest'],
+        default: 'medium'
+    },
     createdAt: {
         type: Date,
         default: Date.now,
