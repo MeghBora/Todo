@@ -1,4 +1,5 @@
-export const createRouter = async (req, res) => {
-    
+const createTodo = async (req, res) => {
+        console.log('yaha bhi aya');
 }
 
+module.exports = { createTodo, }
