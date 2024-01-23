@@ -7,6 +7,7 @@ const authMiddleWare = async(req, res, next) =>{
     const token = req.cookies.token;
     try{
         const decode = jwt.decode(token, process.env.JWT_ACCESS_SECRET)
+        console.log(decode);
 
     }catch(err){
         console.log(err,'err');
