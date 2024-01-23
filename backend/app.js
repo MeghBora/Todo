@@ -19,8 +19,7 @@ app.get('/', (req, res) => {
 
 app.use('/v1/user', userRouter);
 
-app.use('/v1/todo', authMiddleWare);
-app.use(todoRoutes)
+app.use('/v1/todo', authMiddleWare, todoRoutes);
 
 app.listen(process.env.PORT, () => {
     console.log('todo server running on ' + process.env.PORT);
