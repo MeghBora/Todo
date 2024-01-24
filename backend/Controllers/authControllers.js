@@ -53,7 +53,7 @@ const loginUser = async (req, res) => {
 
         const access_token = generateToken({ user, keyType: "Access" });
         const refresh_token = generateToken({ user, keyType: "refresh" });
-        res.cookie('Access_token', access_token);
+        res.cookie('access_token', access_token);
         res.cookie('refresh_token', refresh_token);
         
         res.status(200).json({ access_token, refresh_token });
