@@ -28,9 +28,6 @@ const schema = mongoose.Schema({
         type: Date,
         default: Date.now,
     },
-    ticket: {
-        type: Number,
-    }
 });
 
 module.exports = mongoose.model('todo', schema);
