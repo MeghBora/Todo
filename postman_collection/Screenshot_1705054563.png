@@ -1,0 +1,61 @@
+{
+    "client": "Thunder Client",
+    "collectionName": "Todo",
+    "dateExported": "2024-01-26T08:30:39.219Z",
+    "version": "1.1",
+    "folders": [],
+    "requests": [
+        {
+            "_id": "a8fe2d3a-863e-4a67-8c31-799a5ca96813",
+            "colId": "d492877d-e79e-42dd-8c41-2364bd319b45",
+            "containerId": "",
+            "name": "registerUser",
+            "url": "http://localhost:8000/v1/user/register",
+            "method": "POST",
+            "sortNum": 10000,
+            "created": "2024-01-20T20:08:24.698Z",
+            "modified": "2024-01-23T18:12:23.340Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"name\": \"test1\",\n  \"email\": \"testEmail@gmail.com\",\n  \"password\": \"12345\"\n}",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "300333fe-7d48-4a80-85a0-daf8224da47d",
+            "colId": "d492877d-e79e-42dd-8c41-2364bd319b45",
+            "containerId": "",
+            "name": "loginUser",
+            "url": "http://localhost:8000/v1/user/login",
+            "method": "POST",
+            "sortNum": 20000,
+            "created": "2024-01-20T20:40:51.731Z",
+            "modified": "2024-01-23T18:23:10.716Z",
+            "headers": [],
+            "params": [],
+            "body": {
+                "type": "json",
+                "raw": "{\n  \"email\":\"testEmail@gmail.com\",\n  \"password\": \"12345\"\n}\n",
+                "form": []
+            },
+            "tests": []
+        },
+        {
+            "_id": "705a67b3-3e06-465e-8347-8ac419e4a831",
+            "colId": "d492877d-e79e-42dd-8c41-2364bd319b45",
+            "containerId": "",
+            "name": "createTodo",
+            "url": "http://localhost:8000/v1/todo/create",
+            "method": "POST",
+            "sortNum": 40000,
+            "created": "2024-01-25T18:21:45.405Z",
+            "modified": "2024-01-25T18:21:51.348Z",
+            "headers": [],
+            "params": [],
+            "tests": []
+        }
+    ]
+}

@@ -15,7 +15,7 @@ const authMiddleWare = async(req, res, next) =>{
             res.status(400).json({message: 'Unauthorized'});
             return;
         }
-
+        
         res.json({'decode': decode_access});
     }catch(err){
         console.log(err,'err');
