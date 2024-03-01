@@ -1,6 +1,11 @@
 const User = require('../Model/userModel.js');
 const bcypt = require('bcrypt');
 const generateToken = require('../utils/generateToken.js');
+const generateOTP = require('../utils/generateOTP.js')
+const sendMail = require('../utils/nodemailer.js')
+
+
+
 
 const registerUser = async (req, res) => {
     try {
@@ -71,4 +76,28 @@ const loginUser = async (req, res) => {
     }
 }
 
-module.exports = { registerUser, loginUser }
+const forgetPassword = async (req, res) =>{
+    try {
+        const { email } = req.body;
+        const user = User.findOne({email});
+        if(!user){
+            res.status(400).json({message: 'user not found'})
+            return ;
+        }
+        const otp = generateOTP();
+        const mailoptions = {
+            from: 'boramegh@gmail.com', // sender address
+            to: email,
+            subject: "Here is the otp to reset your password", // Subject line
+            text: JSON.stringify(otp), // plain text body
+            html: "<b>enter confirm and reset password </b>", // html body
+          }
+          const info = await sendMail({mailoptions: mailoptions});
+
+          res.status(200).json({message: info, status: "mail sent successfully", otp: otp})
+    } catch (error) {
+        console.log('error in forget Password', error);
+    }
+}
+
+module.exports = { registerUser, loginUser, forgetPassword }
