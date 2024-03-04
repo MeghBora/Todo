@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { NextUIProvider } from "@nextui-org/react";
 import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes";
 import Auth from '@/pages/Auth';
+import SignUp from './pages/SignUp'
 
 function App() {
   const { theme } = useTheme();
@@ -9,7 +10,8 @@ function App() {
     <NextUIProvider >
       <NextThemesProvider attribute='class' defaultTheme='dark'>
         <main className={`text-foreground bg-background`}>
-          <Auth />
+          <SignUp/>
+          {/* <Auth /> */}
         </main>
       </NextThemesProvider>
     </NextUIProvider>
