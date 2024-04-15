@@ -1,5 +1,6 @@
 const Todo = require("../Model/todo");
 
+let tag = 0;
 const createTodo = async (req, res) => {
         try {
                 const { title, description, priority } = req.body;
@@ -12,8 +13,9 @@ const createTodo = async (req, res) => {
                         description,
                         user: req.user,
                         priority,
+                        tag: `#${tag}`
                 })
-
+                tag = tag+1;
                 await todo.save();
 
                 res.status(201).json({
