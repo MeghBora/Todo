@@ -20,10 +20,17 @@ const schema = mongoose.Schema({
         required: true,
     },
     priority: {
-        type: String, 
+        type: String,
         enum: ['lowest', 'low', 'medium', 'heigh', 'heighest'],
         default: 'medium'
     },
+    parentTask: {
+        type: String,
+        default: null
+    },
+    child: [{
+        type: String,
+    }],
     tag: {
         type: String,
         required: true,
