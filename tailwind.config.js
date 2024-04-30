@@ -26,7 +26,8 @@ export default {
         layout: {}, // dark theme layout tokens
         colors: {
           background: "#000",
-          foreground: "#fff"
+          foreground: "#fff",
+          primary: 'red-500'
         }, // dark theme colors
       },
       // ... custom themes
