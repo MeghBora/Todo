@@ -1,14 +1,17 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { NextUIProvider } from "@nextui-org/react";
-import Auth from './pages/Auth';
-
+import { ThemeProvider as NextThemesProvider, useTheme } from "next-themes";
+import Auth from '@/pages/Auth';
 
 function App() {
-
+  const { theme } = useTheme();
   return (
     <NextUIProvider >
-    // wrap our application here
-    <Auth />
+      <NextThemesProvider attribute='class' defaultTheme='dark'>
+        <main className={`text-foreground bg-background`}>
+          <Auth />
+        </main>
+      </NextThemesProvider>
     </NextUIProvider>
   )
 }

@@ -7,7 +7,7 @@ const cookieParser = require('cookie-parser');
 const userRouter = require('./Routes/authRoutes');
 const authMiddleWare = require('./Middlewares/auth');
 const todoRoutes = require('./Routes/todoRoutes');
-
+const errorMiddleware = require('./Middlewares/errorMiddleware.js')
 app.use(bodyParser.json());
 app.use(cookieParser());
 
@@ -24,3 +24,6 @@ app.use('/v1/todo', authMiddleWare, todoRoutes);
 app.listen(process.env.PORT, () => {
     console.log('todo server running on ' + process.env.PORT);
 });
+
+
+app.use(errorMiddleware)
